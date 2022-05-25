@@ -4,23 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
-    <style></style>
+    <title>Light Switch</title>
+    <!-- ### Internal StyleSheet -->
+    <style>
+      .content-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+      .light {
+        width: 140px;
+        height: 280px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Task 1 : Light Switch</h1>
-      <div class="row">
+    <div>
+      <h1>Task 1: Light Switch (Click Light)</h1>
+      <div class="content-wrapper">
         <img
-          title="Click on me"
           id="myLight"
           class="light"
-          onclick="toggleImage()"
           src="./assets/finalLightOff.png"
+          title="Click on me"
+          onclick="toggleImage()"
         />
       </div>
     </div>
+    <!-- ### Internal Javascript Function -->
+    <script>
+      const toggleImage = () => {
+        const image = document.getElementById("myLight");
+        if (image.src.match("finalLightOff")) {
+          image.src = "./assets/finalLightOn.png";
+        } else {
+          image.src = "./assets/finalLightOff.png";
+        }
+      };
+    </script>
   </body>
 </html>
